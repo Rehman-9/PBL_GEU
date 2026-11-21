@@ -1,0 +1,522 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[
+    a4paper,
+    top=1.55cm,
+    bottom=1.35cm,
+    left=1.75cm,
+    right=1.75cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{GEUBlue}{RGB}{43,91,145}
+\definecolor{GEUBannerBlue}{RGB}{0,102,148}
+\definecolor{GEUYellow}{RGB}{255,201,38}
+\definecolor{InstructionGrey}{RGB}{125,125,125}
+
+% ============================================================
+% GENERAL SETTINGS
+% ============================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1}
+
+% ============================================================
+% HEADER / FOOTER
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+    \fontsize{10.5}{12}\selectfont
+    COURSE NAME: BTech CSE\\ ID: DSCPP-2026-T304
+}
+
+\fancyhead[R]{%
+    \fontsize{10.5}{12}\selectfont
+    PHASE-III PROJECT PROGRESS
+}
+
+\fancyfoot[R]{%
+    \fontsize{10}{12}\selectfont
+    Page \thepage
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{0.65cm}
+\setlength{\footskip}{0.65cm}
+
+% ============================================================
+% BOTTOM YELLOW LINE
+% ============================================================
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[GEUYellow]
+    (current page.south west)
+    rectangle
+    ([yshift=0.14cm]current page.south east);
+\end{tikzpicture}
+}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+\newcommand{\sectiontitle}[1]{%
+    {\color{GEUBlue}
+    \fontsize{18}{22}\selectfont #1}
+}
+
+\newcommand{\instruction}[1]{%
+    {\color{InstructionGrey}
+    \fontsize{10.5}{13}\selectfont #1}
+}
+
+\newcommand{\answerbox}[2]{%
+    \begin{tabularx}{\textwidth}{
+        |>{\raggedright\arraybackslash}X|}
+        \hline
+        \parbox[t][#1][t]{\dimexpr\linewidth-12pt\relax}{
+            \vspace{5pt}
+            \fontsize{11}{13}\selectfont #2
+        }\\
+        \hline
+    \end{tabularx}
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% PAGE 1
+% ============================================================
+
+\vspace*{0.10cm}
+
+\includegraphics[width=8.0cm]{geulogo.png}
+
+\vspace{0.70cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.17cm}
+    {\color{GEUYellow}
+    \fontsize{16.5}{20}\selectfont
+    \bfseries
+    PROJECT AND TEAM INFORMATION}
+    \vspace{0.17cm}
+}}
+
+\vspace{0.80cm}
+
+% PROJECT TITLE
+\sectiontitle{Project Title}
+
+\vspace{0.05cm}
+
+
+\vspace{0.40cm}
+
+\answerbox{1.00cm}{STUDYWISE: STUDY MATERIAL ORGANISING AND SMART PLANNING SYSTEM}
+
+\vspace{0.80cm}
+
+% TEAM INFORMATION
+% \sectiontitle{Student/Team Information}
+
+% \vspace{0.40cm}
+
+% \begin{tabularx}{\textwidth}{
+% |>{\raggedright\arraybackslash}p{0.66\textwidth}
+% |>{\raggedright\arraybackslash}X|
+% }
+% \hline
+
+% \parbox[t][1.15cm][t]{\linewidth}{
+% \vspace{4pt}
+% \fontsize{10.5}{13}\selectfont
+% Team Name:\\[2pt]
+% Team \# (Mentor needs to assign)
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 1 (Team Lead)\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 2\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \end{tabularx}
+
+% \newpage
+
+% ============================================================
+% PAGE 2
+% ============================================================
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.69\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{Team Name: STUDYWISE }\\[-1mm]
+\textit{Team ID: DSCPP-2026-T304}
+\vspace{1.5mm}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{PBL TEAM}
+\vspace{1.5mm}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 1 (Team Lead)}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Khan,RehmanUllah-
+2510012769}\\
+\textit{2510012769@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{rehman.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 2}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Lohni,Manan-
+2510012770}\\
+\textit{2510012770@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{manan1.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 3}\\[-1mm]
+\textit{(Last Name, name: student ID: email, picture):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Sirohi,Dipanshu-
+2510360064}\\
+\textit{2510360064@geu.ac.in}
+
+\vspace{2mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{dipanshu.jpeg}
+\end{minipage}
+\\
+\hline
+
+\end{tabularx}
+
+\newpage
+\vspace*{0.15cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.18cm}
+    {\color{GEUYellow}
+    \fontsize{17}{21}\selectfont
+    \bfseries
+    PHASE-III PROJECT PROGRESS DESCRIPTION (35 pts)}
+    \vspace{0.18cm}
+}}
+
+\vspace{0.70cm}
+
+% ABSTRACT
+\sectiontitle{Project Abstract (2 pts)}
+
+\vspace{0.05cm}
+
+\vspace{0.12cm}
+
+\answerbox{14cm}{STUDYWISE – Study Material Organising and Smart Planning System is a C++ project that focuses on addressing the problem of students having to keep track of all their study material. Students save all their notes and resources in folders, and it becomes hard to find the material that they need. Students often find it difficult to decide which topic they should study first, especially when several exams are approaching and some parts of the syllabus still need attention. STUDYWISE is developed to help students make this decision in a more organized way.\\
+
+In Phase III, the main focus was on completing the planned features of STUDYWISE and connecting them into a working application. The C++ backend manages subjects, topics and study materials, while the React frontend provides an interface through which users can access these features. The system uses JSON files to preserve academic records, and uploaded PDF documents are stored locally in the backend's uploads folder. The priority recommendation system was also implemented using five factors: exam urgency, remaining syllabus, academic importance, difficulty and subject workload. These factors are combined using a weighted calculation, and a custom Max Heap is used to arrange topics according to their priority scores so that topics requiring more attention appear first. Along with this, searching and sorting operations were integrated, and a DSA Visualizer was developed to demonstrate the working of algorithms such as Linear Search, Binary Search, Merge Sort and Max Heap operations.\\\\
+Along with the main features, STUDYWISE uses different data structures and algorithms to manage academic records efficiently. Vectors are used to store collections of subjects and topics, while unordered maps help locate records using their unique IDs. Linear Search and Binary Search are implemented to find subjects and topics, and Merge Sort is used to arrange records based on selected fields such as name, difficulty, syllabus remaining and academic importance. The custom Max Heap organizes topics according to their calculated priority scores, helping students identify which topics need more attention. Study Material Management has also been added, allowing users to upload PDF files, link them with subjects and topics, and view or download them whenever required. To make the working of these concepts easier to understand, a DSA Visualizer demonstrates the operations of the Max Heap, Merge Sort, Linear Search, Binary Search and the weighted priority calculation. These features bring the different parts of STUDYWISE together into a single application for managing academic resources and making study decisions more organized.}
+
+\vspace{0.70cm}
+
+% UPDATED APPROACH
+\sectiontitle{Updated Project Approach and Architecture (2 pts)}
+
+\vspace{0.05cm}
+
+\answerbox{7.5cm}{The development of STUDYWISE follows a modular approach, with each module handling a specific part of the system. C++ is used for the backend, where Object-Oriented Programming concepts help organize information related to subjects, topics and study materials. Separate manager classes handle operations such as adding, updating, retrieving and deleting records. Data is stored in JSON files so that it remains available even after the application is closed. Uploaded PDF documents are kept separately in the backend's local uploads folder, while their details are maintained in the system.\\
+
+The backend consists of SubjectManager, TopicManager and MaterialManager, which are responsible for managing  respective records. A Priority Engine calculates topic scores using exam urgency, remaining syllabus, academic importance, difficulty and subject workload. These scores are used by a custom vector-backed Max Heap to generate priority-based recommendations. Linear Search, Binary Search and Merge Sort are also implemented to support searching and sorting operations. The frontend is developed using React, Vite and Tailwind CSS, while the Crow framework connects it to the C++ backend through REST APIs. In the final development stage, a DSA Visualizer was integrated to demonstrate the working of the Max Heap, searching and sorting algorithms, and priority calculation. This modular design brings the different features together in one application while keeping their implementation and responsibilities organized.}
+
+
+
+% ============================================================
+% PAGE 3
+% ============================================================
+
+\vspace*{0.20cm}
+
+% TASKS COMPLETED
+\sectiontitle{Tasks Completed (7 pts)}
+
+\vspace{0.05cm}
+
+
+
+\vspace{0.20cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Task Completed} &
+\textbf{Team Member}
+\\
+\hline
+
+\parbox[t][16.5cm][t]{\linewidth}{Designed and developed the SubjectManager module and SearchSortEngine, including subject record management, validation, searching and sorting operations. Worked on implementing Linear Search, Binary Search and Merge Sort. Also handled testing and debugging of subject-related operations, JSON persistence, search results and sorting functionality. Contributed to the overall project integration and coordination of development activities.\\\\
+Developed the TopicManager and PriorityEngine modules, focusing on topic record management, validation and subject-topic relationships. Implemented the weighted priority calculation using exam urgency, remaining syllabus, academic importance, difficulty and subject workload. Also worked on testing and debugging topic operations, priority calculations, recommendation results and different input conditions to ensure correct functioning.\\\\
+Worked on the custom Max Heap implementation and Study Material Management module. Implemented heap operations for arranging topics according to priority and developed the functionality for managing study materials, including PDF uploads, local file storage, viewing, downloading, replacement and deletion. Also carried out testing and debugging of heap operations, PDF validation, file handling and material persistence.
+}
+&
+\parbox[t][3.25cm][t]{\linewidth}{Rehman Ullah Khan(Team Lead)\\\\\\\\\\\\\\\\\\\\\\Manan Lohni\\\\\\\\\\\\\\\\\\\\\\Dipanshu Sirohi}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{0.65cm}
+\newpage
+% CHALLENGES
+\sectiontitle{Challenges/Roadblocks (7 pts)}
+
+\vspace{0.05cm}
+
+
+
+\vspace{0.18cm}
+
+\answerbox{13.7cm}{One of the main challenges during the development of STUDYWISE was working with frontend technologies such as React, Vite and Tailwind CSS. Since these technologies are not covered in much detail in our university syllabus, understanding their structure and connecting the frontend with the C++ backend required additional learning and practice. We gradually became more familiar with these tools while developing the different pages and integrating them with the existing APIs.\\
+
+Another difficulty was configuring the C++ backend and connecting it with the frontend. Setting up the Crow framework, managing the CMake configuration and resolving compiler-related issues took considerable effort. We also faced some compatibility problems with different compiler versions. These issues were addressed by using a suitable C++17 compiler, testing the backend separately and checking the API communication before integrating the changes into the application.\\
+
+Implementing the data structures and algorithms correctly was also challenging. The custom Max Heap required careful handling of insertion, swapping and extraction operations to maintain the correct priority order. Similarly, the searching and sorting algorithms had to produce consistent results for different inputs. Developing the weighted priority calculation also required attention because several factors, including exam urgency, remaining syllabus, difficulty, academic importance and subject workload, contribute to the final score.\\
+
+During Stage 6, handling PDF uploads introduced additional challenges. The backend needed to validate uploaded files, maintain their association with subjects and topics, store them safely in the local uploads directory and preserve their metadata in JSON files. We also had to handle file replacement, deletion and missing-file situations carefully.\\
+
+In the final stage, creating visualizations that correctly represented the actual C++ algorithms required additional effort. Making the frontend display the correct steps returned by the backend and ensuring that all existing modules continued to work together involved further testing and debugging. We addressed these issues by developing the project module by module and carrying out regular build checks, API testing and integration testing.}
+
+\vspace{0.65cm}
+
+% TASKS PENDING
+% \sectiontitle{Tasks Pending (7 pts)}
+
+% \vspace{0.05cm}
+
+% \instruction{
+% (Describe the main tasks that you still need to complete.
+% Max 250 words).
+% }
+
+% \vspace{0.18cm}
+
+% \begin{tabularx}{\textwidth}{
+% |>{\raggedright\arraybackslash}X
+% |>{\raggedright\arraybackslash}X|
+% }
+% \hline
+
+% \textbf{Task Pending} &
+% \textbf{Team Member (to complete the task)}
+% \\
+% \hline
+
+% \parbox[t][1.25cm][t]{\linewidth}{}
+% &
+% \parbox[t][1.25cm][t]{\linewidth}{}
+% \\
+% \hline
+
+% \end{tabularx}
+
+% \newpage
+
+% ============================================================
+% PAGE 4
+% ============================================================
+
+% OUTCOMES
+\sectiontitle{Project Outcome/Deliverables (2 pts)}
+
+\answerbox{10.1cm}{The final outcome of STUDYWISE is a web-based study management system that helps students organize their academic subjects, topics and study materials in one place. The application combines a C++ backend with a React frontend and uses Object-Oriented Programming concepts to manage academic records. Separate manager classes handle operations such as adding, updating, retrieving and deleting records, while JSON files are used to preserve information between application sessions.\\
+
+One of the main features is the priority-based recommendation system. It calculates a score for each eligible topic by considering five factors: exam urgency, remaining syllabus, academic importance, difficulty and subject workload. These factors are combined using a weighted calculation, and a custom vector-backed Max Heap is used to arrange topics according to their priority. This helps students identify which topics require more attention.\\
+
+STUDYWISE also includes searching and sorting functionality using Linear Search, Binary Search and Merge Sort. The Study Material Management module allows users to upload PDF documents, associate them with subjects and topics, and view, download, replace or delete them. The uploaded files are stored locally in the backend, while their details are maintained in JSON format.\\
+
+Another important deliverable is the DSA Visualizer, which demonstrates the working of the custom Max Heap, Merge Sort, Linear Search, Binary Search and weighted priority calculation. It helps users understand the algorithms through step-by-step visual representations. Overall, STUDYWISE brings together C++, OOP, DSA, file handling and web technologies in a single application designed to make academic resource management more organized and accessible.}
+
+\sectiontitle{Progress Overview (2 pts)}
+
+\vspace{5mm}
+
+\answerbox{10cm}{During Phase III, STUDYWISE progressed from a basic working prototype to a more complete study management application. The main modules planned in the earlier phase were implemented and connected through the C++ backend and React frontend. The project continued to focus on Object-Oriented Programming and Data Structures and Algorithms, with each feature developed and integrated into the existing system.
+
+The backend was extended to manage subjects, topics and study materials through separate manager classes. The searching and sorting functionalities were implemented using Linear Search, Binary Search and Merge Sort. The Stage 4 priority recommendation system was also completed using a weighted calculation based on exam urgency, remaining syllabus, academic importance, difficulty and subject workload. A custom vector-backed Max Heap was integrated to arrange topics according to their priority scores and generate recommendations.
+
+A major addition in this phase was the Study Material Management module. It allows users to upload PDF documents, associate them with subjects and topics, and view, download, replace or delete them. The uploaded files are stored locally in the backend, while their details are maintained in JSON files. The final development stage introduced a DSA Visualizer with demonstrations of Max Heap operations, Merge Sort, Linear Search, Binary Search and weighted priority calculation.
+
+The frontend and backend were integrated using the Crow framework and REST APIs. The completed application was subjected to build checks, API testing, persistence verification and regression testing to check the working of existing features. Overall, Phase III brought the major components of STUDYWISE together into a functional application, completing the planned development work and preparing the project for its final demonstration.}
+
+% ============================================================
+% PAGE 5
+% ============================================================
+
+\vspace*{1cm}
+
+% CODEBASE
+\sectiontitle{Codebase Information (2 pts)}
+
+\vspace{0.05cm}
+
+
+
+\vspace{0.5cm}
+
+\answerbox{10.4cm}{**Repository Link:** https://github.com/Rehman-9/PBL\_GEU
+
+**Current Branch:** [main]
+
+**Important Commits:**[]\\ 
+
+STUDYWISE is developed using C++ for the backend and React for the frontend. The project code is maintained in a GitHub repository, which helps the team keep track of development changes and maintain the different modules of the application. The backend is configured using CMake and the Crow framework, while Vite and Tailwind CSS are used for frontend development and styling.\\
+
+The project is organized into separate modules to keep the implementation manageable. The backend contains classes and manager modules for Subject, Topic and StudyMaterial management. It also includes the SearchSortEngine, PriorityEngine and custom Max Heap implementation for searching, sorting and generating topic recommendations. The MaterialManager handles study material records and PDF file management, while the VisualizerService provides the data required for the DSA visualization features. The frontend contains separate pages for the Dashboard, Subjects, Topics, Recommendations, Materials and DSA Visualizer.\\
+
+JSON files are used to store subject, topic and material records, while uploaded PDF documents are maintained locally in the backend uploads directory. The application communicates through REST APIs, connecting the React interface with the C++ backend. Development was carried out in stages, with individual modules implemented, tested and integrated into the existing application. The GitHub repository serves as the central location for maintaining the source code and tracking the progress of the project.}
+
+\vspace{0.65cm}
+\newpage
+% TESTING
+\sectiontitle{Testing and Validation Status (2 pts)}
+
+\vspace{0.05cm}
+
+\instruction{(Provide information about any tests conducted)}
+
+\vspace{0.30cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}p{0.34\textwidth}
+|>{\raggedright\arraybackslash}p{0.31\textwidth}
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Test Type} &
+\textbf{Status (Pass/Fail)} &
+\textbf{Notes}
+\\
+\hline
+
+\parbox[t][24cm][t]{\linewidth}{C++ Backend Compilation\\\\\\\\\\Frontend Build\\\\\\\\\\\\Subject \& Topic Management\\\\\\\\\\Searching \& Sorting\\\\\\\\\\\\Priority Calculation \& Max Heap\\\\\\\\\\\\Study Material Management\\\\\\\\\\\\File Handling \& Persistence\\\\\\\\\\\\DSA Visualization APIs}
+&
+\parbox[t][24cm][t]{\linewidth}{Pass\\\\\\\\\\Pass\\\\\\\\\\\\Pass\\\\\\\\\\Pass\\\\\\\\\\\\Pass\\\\\\\\\\\\\\Pass\\\\\\\\\\\\Pass\\\\\\\\\\\\Pass}
+&
+\parbox[t][24cm][t]{\linewidth}{The backend was successfully compiled using CMake with the configured C++17 compiler.\\\\The React frontend was built successfully using Vite, with all required modules and components included.\\\\CRUD operations, input validation, subject-topic relationships and JSON persistence were tested.\\\\Linear Search, Binary Search and Merge Sort were tested with different inputs and search/sorting conditions.\\\\Weighted priority scores and Max Heap recommendations were tested, including subject-specific recommendations and priority ordering.\\\\PDF upload, file validation, viewing, downloading, replacement, metadata updates and deletion were tested.\\\\Subject, topic and material records were verified after restarting the backend. Uploaded PDFs remained accessible.\\\\All five visualization endpoints were tested for Max Heap, Merge Sort, Linear Search, Binary Search and weighted priority calculation.}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{0.65cm}
+
+% DELIVERABLES
+\sectiontitle{Deliverables Progress (2 pts)}
+
+\vspace{0.05cm}
+
+
+
+\vspace{0.25cm}
+
+\answerbox{19cm}{The development of STUDYWISE was completed through a series of stages, with each stage adding new features to the application. During Phase III, the main focus was on completing the backend modules, integrating the frontend, implementing the required DSA algorithms and testing the overall system.\\
+
+1.Basic C++ Models and Backend Setup (Completed):The Subject, Topic and StudyMaterial classes were implemented using OOP concepts. The backend was developed using C++ and the Crow framework, with CMake used for compilation and build configuration.\\
+
+2.Subject and Topic Management (Completed):SubjectManager and TopicManager were implemented to handle adding, updating, retrieving and deleting records. Input validation, subject-topic relationships and JSON persistence were also incorporated.\\
+
+3.Priority Calculation (Completed):The Priority Engine was implemented using five factors: exam urgency, remaining syllabus, academic importance, difficulty and subject workload. Weighted scores are calculated to identify topics that require more attention.\\
+
+4.Custom Max Heap (Completed):A custom vector-backed Max Heap was implemented to organize topics according to their priority scores. It is integrated with the recommendation system to display higher-priority topics first.\\
+
+5.Searching and Sorting (Completed):Linear Search, Binary Search and Merge Sort were implemented in C++. These algorithms support searching for subjects and topics and sorting records using different attributes.\\
+
+6.Study Material Management and File Handling (Completed): MaterialManager was implemented to manage study material records. Users can upload PDF documents, associate them with subjects and topics, view, download, replace and delete files. Material information is stored in JSON files, while uploaded PDFs are maintained in the backend's local uploads directory.\\
+
+7.DSA Visualization (Implemented):A DSA Visualizer was added to demonstrate Max Heap operations, Merge Sort, Linear Search, Binary Search and weighted priority calculation. The visualizer uses data and operation traces provided by the C++ backend.\\
+
+8.Frontend Integration and Testing (Completed):The React frontend was connected to the C++ backend through REST APIs. The completed modules were built and tested, including API functionality, JSON persistence and regression checks to verify that previously implemented features continued to work.\\
+
+Overall, the major development tasks of STUDYWISE have been implemented and integrated into a single application. The project now provides subject and topic management, priority-based recommendations, study material organization and visual demonstrations of the DSA concepts used in its backend.}
+
+\end{document}
